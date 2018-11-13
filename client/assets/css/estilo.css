@@ -1,0 +1,23 @@
+.nao-mostrar{
+  display: none;
+}
+.card-columns{
+  margin: 1%;
+}
+.card{
+  cursor: pointer;
+}
+.card:hover{
+  background-color: rgb(250, 250, 176);
+}
+.card-subtitle{
+  font-size: 0.8em;
+}
+.modal-footer{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+}
+#btn-deletar .svg-deletar:hover path {
+  fill: #FFF;
+}

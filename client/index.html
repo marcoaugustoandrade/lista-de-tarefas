@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Lista de tarefas</title>
+
+  <!-- CSS Bootstrap -->
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <!-- CSS Bootstrap -->
+
+  <!-- CSS customizado -->
+  <link rel="stylesheet" href="assets/css/estilo.css">
+  <!-- CSS customizado -->
+</head>
+
+<body>
+
+  <!-- cabeçalho -->
+  <header class="bg-primary">
+    <div class="container">
+      <h1 class="p-2 text-white">Lista de tarefas</h1>
+    </div>
+  </header>
+  <!-- cabeçalho -->
+
+  <main class="container">
+
+    <!-- formulário -->
+    <div>
+      <form class="form-inline m-2 d-flex justify-content-between">
+        <div>
+          <input type="text" class="form-control" id="texto-busca">
+          <button class="btn btn-primary ml-2" id="btn-buscar">
+            <img src="assets/images/pesquisar.svg" alt=""> Pesquisar
+          </button>
+        </div>
+        <button type="button" class="btn btn-success ml-2" id="btn-adicionar">
+          <img src="assets/images/adicionar.svg" alt=""> Nova tarefa
+        </button>
+      </form>
+    </div>
+    <!-- formulário -->
+
+    <!-- mensagem -->
+    <div class="nao-mostrar" id="mensagem">Bem-vindo</div>
+    <!-- mensagem -->
+
+    <!-- cartões -->
+    <div class="card-columns" id="painelTarefas">
+
+      <div class="card">
+        <div class="card-body">
+          <div>
+            <span class="card-subtitle mb-2 text-muted">06/10/2018</span>
+          </div>
+          <p class="card-text">Comprar água</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <div>
+            <span class="card-subtitle mb-2 text-muted">05/10/2018</span>
+          </div>
+          <p class="card-text">Pagar conta de energia</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <div>
+            <span class="card-subtitle mb-2 text-muted">01/10/2018</span>
+          </div>
+          <p class="card-text">Fazer compras</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <div>
+            <span class="card-subtitle mb-2 text-muted">11/10/2018</span>
+          </div>
+          <p class="card-text">Entregar trabalho de matemática</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <div>
+            <span class="card-subtitle mb-2 text-muted">10/10/2018</span>
+          </div>
+          <p class="card-text">Prova de lógica de programação</p>
+        </div>
+      </div>
+
+    </div>
+    <!-- cartões -->
+
+  </main>
+
+
+  <!-- Início modal -->
+  <div class="modal" tabindex="-1" role="dialog" id="modal">
+    <div class="modal-dialog" role="document">
+      <form class="form">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Inserir nova tarefa</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <input type="hidden" id="idTarefa">
+              <label for="texto-tarefa">Descrição:</label>
+              <input type="text" id="descricao-tarefa" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="texto-tarefa">Data:</label>
+              <input type="date" id="data-tarefa" class="form-control" required>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-success nao-mostrar" id="btn-inserir">
+              <img src="assets/images/feito.svg" alt=""> Inserir
+            </button>
+            <button type="button" class="btn btn-success nao-mostrar" id="btn-alterar">
+                <img src="assets/images/feito.svg" alt=""> Alterar
+            </button>
+            <button type="button" class="btn btn-outline-danger nao-mostrar" id="btn-deletar">
+                <img src="assets/images/deletar.svg" alt="" class="svg-deletar"> Deletar
+            </button>
+          </div>
+      </form>
+    </div>
+  </div>
+  </div>
+  <!-- Fim modal -->
+
+
+  <!-- scripts -->
+
+  <!-- scripts -->
+
+
+  <!-- scripts do Bootstrap -->
+  <script src="../node_modules/jquery/dist/jquery.slim.min.js"></script>
+  <script src="../node_modules/popper.js/dist/popper-utils.min.js"></script>
+  <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <!-- scripts do Bootstrap -->
+</body>
+
+</html>
