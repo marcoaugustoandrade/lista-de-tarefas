@@ -1,0 +1,119 @@
+openapi: "3.0.1"
+info:
+  title: API Tarefas
+  version: v1
+paths:
+  /tarefas:
+    get:
+      summary: Lista todas as tarefas
+      responses:
+        '200':
+          description: "Lista todas as tarefas"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tarefa'
+        '404':
+          description: "Nenhuma tarefa cadastrada"
+    post:
+      summary: Inserir uma nova tarefa
+      responses:
+        '201':
+          description: "Tarefa inserida"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tarefa'
+                  
+  /tarefas/f/{filtro}:
+    get:
+      summary: Lista tarefas a partir de (ou parte de) sua descrição
+      parameters: 
+      - name: filtro
+        in: path
+        description: "Descrição da tarefa"
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: "Lista tarefas a partir de (ou parte de) sua descrição"
+          content:
+            applicatin/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tarefa'
+        '404':
+          description: "Nenhuma tarefa encontrada para este filtro"
+        
+  /tarefas/{id}:
+    get:
+      summary: Lista uma tarefa a partir do seu id
+      parameters:
+      - name: id
+        in: path
+        description: "Id da tarefa"
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: "Lista uma tarefa a partir do seu id"
+        '404':
+          description: "Tarefa não encontrada"
+    
+    put:
+      summary: Altera uma tarefa
+      parameters:
+      - name: id
+        in: path
+        description: "Id da tarefa"
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '202':
+          description: "Tarefa alterada"
+        '404':
+          description: "Tarefa não encontrada"
+    
+    delete:
+      summary: Deleta uma tarefa
+      parameters:
+      - name: id
+        in: path
+        description: "Id da tarefa"
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: "Tarefa deletada"
+        '404':
+          description: "Tarefa não encontrada"
+    
+components:
+    schemas:
+        Tarefa:
+            properties:
+                id:
+                    type: integer
+                descricao:
+                    type: string
+                data:
+                    type: string
+                realizado:
+                    type: boolean
+            required:
+                - id
+                - descricao
+                - data
+            type: object
