@@ -21,7 +21,7 @@
   <!-- cabeçalho -->
   <header class="bg-primary">
     <div class="container">
-      <h1 class="p-2 text-white">Lista de tarefas</h1>
+      <h1 class="pt-2 pb-2 text-white">Lista de tarefas</h1>
     </div>
   </header>
   <!-- cabeçalho -->
@@ -29,19 +29,19 @@
   <main class="container">
 
     <!-- formulário -->
-    <div>
-      <form class="form-inline m-2 d-flex justify-content-between">
-        <div>
-          <input type="text" class="form-control" id="texto-busca">
-          <button class="btn btn-primary ml-2" id="btn-buscar">
-            <img src="assets/images/pesquisar.svg" alt=""> Pesquisar
-          </button>
-        </div>
-        <button type="button" class="btn btn-success ml-2" id="btn-adicionar">
-          <img src="assets/images/adicionar.svg" alt=""> Nova tarefa
+    <form class="d-flex flex-wrap justify-content-between">
+      <div>
+        <input type="text" id="texto-busca">
+        <button class="btn btn-primary" id="btn-buscar">
+          <img src="assets/images/pesquisar.svg" alt="">
         </button>
-      </form>
-    </div>
+      </div>
+      <div>
+        <button type="button" class="btn btn-success" id="btn-adicionar">
+          <img src="assets/images/adicionar.svg" alt="">
+        </button>
+      </div>
+    </form>
     <!-- formulário -->
 
     <!-- mensagem -->
@@ -54,7 +54,7 @@
       <div class="card">
         <div class="card-body">
           <div>
-            <span class="card-subtitle mb-2 text-muted">06/10/2018</span>
+            <span class="card-subtitle mb-2 text-muted">06/10/2018 as 10:00</span>
           </div>
           <p class="card-text">Comprar água</p>
         </div>
@@ -62,7 +62,7 @@
       <div class="card">
         <div class="card-body">
           <div>
-            <span class="card-subtitle mb-2 text-muted">05/10/2018</span>
+            <span class="card-subtitle mb-2 text-muted">05/10/2018 as 15:00</span>
           </div>
           <p class="card-text">Pagar conta de energia</p>
         </div>
@@ -70,7 +70,7 @@
       <div class="card">
         <div class="card-body">
           <div>
-            <span class="card-subtitle mb-2 text-muted">01/10/2018</span>
+            <span class="card-subtitle mb-2 text-muted">01/10/2018 as 10:00</span>
           </div>
           <p class="card-text">Fazer compras</p>
         </div>
@@ -78,7 +78,7 @@
       <div class="card">
         <div class="card-body">
           <div>
-            <span class="card-subtitle mb-2 text-muted">11/10/2018</span>
+            <span class="card-subtitle mb-2 text-muted">11/10/2018 as 12:00</span>
           </div>
           <p class="card-text">Entregar trabalho de matemática</p>
         </div>
@@ -86,7 +86,7 @@
       <div class="card">
         <div class="card-body">
           <div>
-            <span class="card-subtitle mb-2 text-muted">10/10/2018</span>
+            <span class="card-subtitle mb-2 text-muted">10/10/2018 as 19:00</span>
           </div>
           <p class="card-text">Prova de lógica de programação</p>
         </div>
@@ -125,10 +125,13 @@
               <img src="assets/images/feito.svg" alt=""> Inserir
             </button>
             <button type="button" class="btn btn-success nao-mostrar" id="btn-alterar">
-                <img src="assets/images/feito.svg" alt=""> Alterar
+              <img src="assets/images/feito.svg" alt=""> Alterar
             </button>
             <button type="button" class="btn btn-outline-danger nao-mostrar" id="btn-deletar">
-                <img src="assets/images/deletar.svg" alt="" class="svg-deletar"> Deletar
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z" fill="#dc3545"
+                  id="path" /></svg>
+              Deletar
             </button>
           </div>
       </form>

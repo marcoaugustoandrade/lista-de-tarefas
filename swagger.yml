@@ -25,7 +25,6 @@ paths:
           content:
             application/json:
               schema:
-                type: array
                 items:
                   $ref: '#/components/schemas/Tarefa'
                   
@@ -36,20 +35,46 @@ paths:
       - name: filtro
         in: path
         description: "Descrição da tarefa"
-        required: false
+        required: true
         schema:
           type: string
       responses:
         '200':
           description: "Lista tarefas a partir de (ou parte de) sua descrição"
           content:
-            applicatin/json:
+            application/json:
               schema:
                 type: array
                 items:
                   $ref: '#/components/schemas/Tarefa'
         '404':
           description: "Nenhuma tarefa encontrada para este filtro"
+          
+  /tarefas/p/{pagina}/f/{filtro}:
+    get:
+      summary: Lista tarefas a partir de (ou parte de) sua descrição com paginação
+      parameters: 
+      - name: pagina
+        in: path
+        description: "Número da página"
+        required: true
+        schema:
+          type: integer
+      - name: filtro
+        in: path
+        description: "Descrição da tarefa"
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: "Lista tarefas a partir de (ou parte de) sua descrição com paginação"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tarefa'
         
   /tarefas/{id}:
     get:
@@ -65,6 +90,12 @@ paths:
       responses:
         '200':
           description: "Lista uma tarefa a partir do seu id"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tarefa'
         '404':
           description: "Tarefa não encontrada"
     
@@ -81,6 +112,12 @@ paths:
       responses:
         '202':
           description: "Tarefa alterada"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tarefa'
         '404':
           description: "Tarefa não encontrada"
     

@@ -1,13 +1,15 @@
 version: '3.3'
-volumes:
-  data:
 services:
-  db:
-    image: mysql:5.6
+  mysql:
+    image: mysql:5.7
+    container_name: tarefas-mysql
+    environment:
+    - MYSQL_ROOT_PASSWORD=Suporte99
+    - MYSQL_DATABASE=db_tarefas
+    - MYSQL_USER=suporte
+    - MYSQL_PASSWORD=Suporte99
     ports:
       - "3307:3306"
     volumes:
-      - data:/server/data
-    environment:
-      - MYSQL_ROOT_PASSWORD=Suporte99
-      - MYSQL_DATABASE=db_tarefas
+      # - ./server/data:/var/lib/mysql
+      - ./server/database.sql:/docker-entrypoint-initdb.d/database.sql
