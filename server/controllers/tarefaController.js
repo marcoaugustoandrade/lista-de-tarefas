@@ -100,7 +100,7 @@ exports.listarPorId = (req, res) => {
       });
     } else if (rows.length > 0) {
       res.status(200);
-      res.json(rows);
+      res.json(rows[0]);
     } else {
       res.status(404);
       res.json({
