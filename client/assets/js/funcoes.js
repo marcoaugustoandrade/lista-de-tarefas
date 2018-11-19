@@ -18,7 +18,7 @@ function montarPainel() {
 
   // Captura texto da busca
   let filtro = document.querySelector('#texto-busca').value;
-  console.log(filtro);
+  // console.log(filtro);
 
   // Espera o resultado
   let promise = listarTarefas(filtro);
