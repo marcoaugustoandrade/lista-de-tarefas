@@ -141,7 +141,7 @@ exports.alterar = (req, res) => {
   tarefa.id = req.params.id;
   tarefa.descricao = req.body.descricao;
   tarefa.data = req.body.data;
-  tarefa.realizado = req.body.realizado;
+  tarefa.realizado = req.body.realizado || false;
 
   const query = 'update tarefas set descricao = ?, data = ?, realizado = ? where id = ?';
   conexao.query(query, [tarefa.descricao, tarefa.data, tarefa.realizado, tarefa.id], (err, rows) => {

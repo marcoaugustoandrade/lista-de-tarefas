@@ -2,6 +2,10 @@ openapi: "3.0.1"
 info:
   title: API Tarefas
   version: v1
+
+servers:
+  - url: http://localhost:3010/api/v1
+
 paths:
   /tarefas:
     get:
