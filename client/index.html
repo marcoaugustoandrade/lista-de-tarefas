@@ -16,7 +16,7 @@
   <!-- CSS customizado -->
 </head>
 
-<body>
+<body onload="montarPainel()">
 
   <!-- cabeçalho -->
   <header class="bg-primary">
@@ -50,47 +50,6 @@
 
     <!-- cartões -->
     <div class="card-columns" id="painelTarefas">
-
-      <div class="card">
-        <div class="card-body">
-          <div>
-            <span class="card-subtitle mb-2 text-muted">06/10/2018 as 10:00</span>
-          </div>
-          <p class="card-text">Comprar água</p>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-body">
-          <div>
-            <span class="card-subtitle mb-2 text-muted">05/10/2018 as 15:00</span>
-          </div>
-          <p class="card-text">Pagar conta de energia</p>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-body">
-          <div>
-            <span class="card-subtitle mb-2 text-muted">01/10/2018 as 10:00</span>
-          </div>
-          <p class="card-text">Fazer compras</p>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-body">
-          <div>
-            <span class="card-subtitle mb-2 text-muted">11/10/2018 as 12:00</span>
-          </div>
-          <p class="card-text">Entregar trabalho de matemática</p>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-body">
-          <div>
-            <span class="card-subtitle mb-2 text-muted">10/10/2018 as 19:00</span>
-          </div>
-          <p class="card-text">Prova de lógica de programação</p>
-        </div>
-      </div>
 
     </div>
     <!-- cartões -->
@@ -142,7 +101,10 @@
 
 
   <!-- scripts -->
-
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/helpers/data.js"></script>
+  <script src="assets/js/helpers/mensagem.js"></script>
+  <script src="assets/js/funcoes.js"></script>
   <!-- scripts -->
 
 
